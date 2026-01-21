@@ -1,368 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adwaith | Cybersecurity Portfolio</title>
-  <meta name="description" content="Adwaith - Ethical Hacker & Cybersecurity Specialist. Focused on Red Teaming, Blue Teaming, and Digital Forensics. Explore my work and projects.">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adwaith U R | Professional Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --bg: #0b0c10;
-      --card: #1f2833;
-      --text: #c5c6c7;
-      --accent: #45a29e;
-      --accent-light: #66fcf1;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    /* Header/Nav */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(11, 12, 16, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .logo {
-      color: var(--accent);
-      font-size: 1.4rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 400;
-      transition: color .3s;
-    }
-
-    nav a:hover {
-      color: var(--accent-light);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      color: var(--accent);
-      cursor: pointer;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .hero img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 25px rgba(69,162,158,0.5);
-      object-fit: cover;
-      animation: glow 3s ease-in-out infinite alternate;
-      margin-bottom: 1.5rem;
-    }
-
-    @keyframes glow {
-      from { box-shadow: 0 0 10px rgba(69,162,158,0.4); }
-      to { box-shadow: 0 0 25px rgba(69,162,158,0.9); }
-    }
-
-    .hero h1 {
-      color: #fff;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero p {
-      max-width: 650px;
-      line-height: 1.7;
-      font-size: 1.1rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #0b0c10;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(69,162,158,0.5);
-    }
-
-    .btn:hover {
-      background: var(--accent-light);
-      box-shadow: 0 0 20px rgba(102,252,241,0.6);
-      transform: translateY(-3px);
-    }
-
-    /* Sections */
-    section {
-      padding: 5rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    section h2 {
-      color: #fff;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      position: relative;
-    }
-
-    section h2::after {
-      content: '';
-      width: 80px;
-      height: 3px;
-      background: var(--accent);
-      display: block;
-      margin: 0.5rem auto 0;
-      border-radius: 5px;
-    }
-
-    .skills, .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 10px;
-      text-align: center;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-      border-color: var(--accent);
-    }
-
-    /* Contact */
-    .contact {
-      text-align: center;
-    }
-
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    .socials a {
-      color: var(--accent);
-      font-size: 1.8rem;
-      transition: all 0.3s ease;
-    }
-
-    .socials a:hover {
-      color: var(--accent-light);
-      transform: translateY(-4px);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: rgba(11,12,16,0.95);
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        border-left: 1px solid rgba(255,255,255,0.05);
-        padding: 1rem;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero img {
-        width: 120px;
-        height: 120px;
-      }
-    }
-    #about {
-  text-align: left;
-  line-height: 1.7;
-  color: var(--text);
-}
-
-.about-text {
-  max-width: 800px;
-  margin: auto;
-  text-align: justify;
-  font-size: 1.05rem;
-}
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header>
-    <div class="logo">Adwaith</div>
-    <i class="fas fa-bars menu-toggle"></i>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <nav>
+    <div class="container nav-wrapper">
+      <div class="logo">Adwaith U R</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-layout">
+      <div class="hero-text">
+        <span class="role-badge">Cybersecurity Enthusiast</span>
+        <h1>ADWAITH U R</h1>
+        <p>I am an ethical hacker and security researcher specializing in Red Teaming and Vulnerability Assessments. I
+          help organizations stay ahead of emerging threats.</p>
+        <a href="Adwaith_CV.pdf" class="btn-primary" target="_blank">
+  <i class="fas fa-file-alt"></i> View Resume
+</a>
+      </div>
+      <div class="hero-img-container">
+        <img src="your-photo.jpg" alt="Adwaith U R" class="hero-img">
+      </div>
+    </div>
   </header>
 
-  <section class="hero" id="home">
-    <img src="your-photo.jpg" alt="Adwaith Photo">
-    <h1>Hello, I'm <span style="color:var(--accent)">Adwaith</span></h1>
-    <p>Cybersecurity Enthusiastic & Ethical Hacker | Red Teaming.</p>
-    <a href="Adwaith-CV.pdf" class="btn" target="_blank"><i class="fas fa-file-alt"></i> Download CV</a>
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-sub">Biography</span>
+        <h2>About Me</h2>
+        <p style="max-width: 700px; margin: 0 auto;">
+          With a deep passion for cybersecurity, I have dedicated myself to understanding the complexities of modern
+          digital defense.
+          My work involves proactive threat hunting, security auditing, and building resilient systems.
+          I am driven by the challenge of finding vulnerabilities before malicious actors do.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="about">
-  <h2>About Me</h2>
-  <div class="about-text">
-    <p>I’m Adwaith, a cybersecurity student and ethical hacker passionate about uncovering and mitigating security vulnerabilities before they become real-world threats. My interests center on bug bounty hunting, OSINT (Open Source Intelligence), penetration testing, and red teaming — exploring how systems can be breached and, more importantly, how they can be secured.</p>
-
-    <p>I approach cybersecurity as both an art and a science — combining analytical thinking with creative problem-solving to identify attack paths others might overlook. From reconnaissance and exploitation to reporting and remediation, I enjoy working through the full lifecycle of a security assessment.</p>
-
-    <p>Outside structured engagements, I actively participate in CTF competitions, and continuously develop new tools to enhance my workflow. My goal is to grow into a well-rounded security professional capable of defending modern digital infrastructures through offensive insight and ethical application.</p>
-  </div>
-</section>
-
-
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="card"><i class="fas fa-user-secret"></i> Penetration Testing</div>
-      <div class="card"><i class="fas fa-shield-alt"></i>Vulnerability Assessment</div>
-      <!-- <div class="card"><i class="fas fa-bug"></i> Malware Analysis</div>
-      <div class="card"><i class="fas fa-exclamation-triangle"></i> Incident Response</div> -->
-      <div class="card"><i class="fas fa-search"></i> Osint</div>
-      <!-- <div class="card"><i class="fab fa-python"></i> Python for Security</div> -->
+    <div class="container">
+      <div class="section-header">
+        <span class="section-sub">Expertise</span>
+        <h2>Technical Skills</h2>
+      </div>
+      <div class="skill-grid">
+        <div class="skill-item">Penetration Testing</div>
+        <div class="skill-item">Vulnerability Assessment</div>
+        <div class="skill-item">OSINT</div>
+        <div class="skill-item">Burp Suite</div>
+        <div class="skill-item">Python</div>
+        <div class="skill-item">Linux</div>
+        <div class="skill-item">Network Security</div>
+        <div class="skill-item">Incident Response</div>
+      </div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">Scam Reporting Platform — A secure portal for public cyber threat reporting.</div>
-      <div class="card">Home Service platform — A secure platform for booking household services</div>
-      <div class="card">CTF Challenge Toolkit — Automated utilities for penetration testing and challenge solving.</div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-sub">Portfolio</span>
+        <h2>Key Projects</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <i class="fas fa-shield-alt card-icon"></i>
+          <h3>ScanSense</h3>
+          <p>A comprehensive Cyber Scam Reporting Platform designed to help victims report fraud and track malicious
+            actors
+            using OSINT techniques.</p>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Let’s connect through:</p>
-    <div class="socials">
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adwaithur.contact@gmail.com"
-   target="_blank"
-   rel="noopener noreferrer"
-   title="Send Email via Gmail"
-   aria-label="Send email via Gmail">
-  <i class="fas fa-envelope"></i>
-</a>
-      <a href="https://github.com/zeus371" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/adwaithur" target="_blank" rel="noopener noreferrer">
-  <i class="fab fa-linkedin"></i>
-</a>
-</a>
-</a>
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-sub">Get In Touch</span>
+        <h2>Let's Collaborate</h2>
+        <p>Open for security consulting and full-time opportunities.</p>
+      </div>
+      <div class="contact-actions">
+        <a href="mailto:adwaithur.contact@gmail.com" class="social-btn" aria-label="Email"><i
+            class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/adwaithur" target="_blank" class="social-btn" aria-label="LinkedIn"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/zeus371" target="_blank" class="social-btn" aria-label="GitHub"><i
+            class="fab fa-github"></i></a>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Adwaith. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 Adwaith U R. All Rights Reserved.</p>
+    </div>
   </footer>
 
-  <script>
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-
-    // Reveal animation on scroll
-    const sections = document.querySelectorAll('section');
-    const reveal = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(sec => {
-        const boxTop = sec.getBoundingClientRect().top;
-        if(boxTop < triggerBottom) {
-          sec.classList.add('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', reveal);
-    reveal();
-  </script>
 </body>
+
 </html>
